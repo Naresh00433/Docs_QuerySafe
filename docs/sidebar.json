@@ -1,7 +1,6 @@
 [
   { "title": "Introduction", "slug": "introduction" },
-  { "title": "Quick Start", "slug": "quick-start" },
-  { "title": "Objectives", "slug": "objectives" },
+
   {
     "title": "How to Register",
     "children": [

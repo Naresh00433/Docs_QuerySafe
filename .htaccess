@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^docs/([a-zA-Z0-9\-]+)/?$ page.php?slug=$1 [L]
