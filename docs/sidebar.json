@@ -1,0 +1,63 @@
+[
+  { "title": "Introduction", "slug": "introduction" },
+  { "title": "Quick Start", "slug": "quick-start" },
+  { "title": "Objectives", "slug": "objectives" },
+  {
+    "title": "How to Register",
+    "children": [
+      { "title": "Get Started", "slug": "get-started" },
+      { "title": "SignUp", "slug": "signup" },
+      { "title": "SignIn", "slug": "signin" },
+      { "title": "Dashboard", "slug": "dashboard" }
+    ]
+  },
+  {
+    "title": "Create A ChatBot",
+    "children": [
+      { "title": "Create a new Chatbot", "slug": "create-new-chatbot" },
+      { "title": "Upload Document", "slug": "upload-document" },
+      { "title": "Model Train", "slug": "model-train" },
+      { "title": "Ready to use", "slug": "ready-to-use" },
+      { "title": "Start Conversation", "slug": "start-conversation" }
+    ]
+  },
+  { "title": "Integrate to Website", "slug": "integrate-to-website" },
+  {
+    "title": "Monitor Performance",
+    "children": [
+      { "title": "First Contentful Paint (FCP)", "slug": "fcp" },
+      { "title": "Large Contentful Paint (LCP)", "slug": "lcp" },
+      { "title": "Total Blocking Time (TBT)", "slug": "tbt" },
+      { "title": "Speed Index (SI)", "slug": "si" },
+      { "title": "Cumulative Layout Shift (CLS)", "slug": "cls" }
+    ]
+  },
+  {
+    "title": "Help & Support",
+    "children": [
+      { "title": "Contact Us", "slug": "contact-us" },
+      { "title": "Email Support", "slug": "email-support" },
+      { "title": "Video Tutorials", "slug": "video-tutorials" },
+      { "title": "FAQs", "slug": "faqs" },
+      { "title": "User Guide", "slug": "user-guide" }
+    ]
+  },
+  {
+    "title": "Upgrade",
+    "children": [
+      { "title": "Performance Optimization", "slug": "performance-optimization" },
+      { "title": "UI Enhancement", "slug": "ui-enhancement" },
+      { "title": "Improved Response Time", "slug": "improved-response-time" },
+      { "title": "Functionality Improvement", "slug": "functionality-improvement" }
+    ]
+  },
+  {
+    "title": "Community",
+    "children": [
+      { "title": "Author", "slug": "author" },
+      { "title": "Resources", "slug": "resources" },
+      { "title": "References", "slug": "references" },
+      { "title": "Special Thanks", "slug": "special-thanks" }
+    ]
+  }
+]
