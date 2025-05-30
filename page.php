@@ -77,42 +77,10 @@ require './pre/header.php';
                 }
                 renderSidebar($sidebar);
                 ?>
-                <style>
-                    .sidebar .nav-link {
-                        color: #22223b;
-                        border-radius: 6px;
-                        transition: background 0.2s, color 0.2s;
-                        padding-left: 0.5rem;
-                        cursor: pointer;
-                    }
-
-                    .sidebar .nav-link:hover,
-                    .sidebar .nav-link.active {
-                        background: #a100d6;
-                        color: #fff;
-                    }
-
-                    .sidebar .fw-bold {
-                        color: var(--primary-color, #7c3aed);
-                        margin-top: 0.75rem;
-                        margin-bottom: 0.25rem;
-                        display: block;
-                    }
-
-                    .sidebar ul {
-                        margin-bottom: 0.25rem;
-                    }
-
-                    .sidebar .collapse .nav-link {
-                        font-weight: normal;
-                    }
-
-                    
-                </style>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
             </div>
         </div>
-        <div class="col-6 pb-3 px-0 mt-4">
+        <div class="col-6 pb-3 px-0 mt-1">
             <div class="container-fluid main-content border p-5" >
                 <h1 class="display-4"><?= htmlspecialchars($page['title']) ?></h1>
                 <hr>
@@ -192,6 +160,3 @@ require './pre/header.php';
         </div>
     </div>
 </div>
-<?php
-
-?>
