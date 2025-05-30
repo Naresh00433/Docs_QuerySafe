@@ -1,7 +1,9 @@
 <h2>Welcome</h2>
 <p><strong>Welcome to the official documentation of QuerySafe – a secure and intelligent chatbot platform developed by Metric Vibes.</strong></p>
 <p>This guide provides everything you need to understand, build, customize, and deploy powerful chatbots tailored to your business or application needs.</p>
-<p>Whether you're a developer, product manager, or tech enthusiast, this documentation offers a full-stack overview — from initial setup to advanced customization — for making the most of QuerySafe’s AI-powered conversational capabilities.</p>
+<p>Whether you're a developer, product manager, or tech enthusiast, this documentation offers a full-stack overview 
+  — from initial setup to advanced customization <br>
+  — for making the most of QuerySafe’s AI-powered conversational capabilities.</p>
 
 <h2>Quick Start Guide: Launch Your First Chatbot in Minutes</h2>
 <p>If you're new to QuerySafe, start here. Our step-by-step Quick Start Guide helps you:</p>
