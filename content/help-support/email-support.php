@@ -1,7 +1,7 @@
 <h2>📧 2. Email Support – Fast, Reliable Resolution</h2>
 <p>
     For more detailed concerns, you can email us at<br>
-    <strong>📩 support@metricvibes.com</strong>
+    <strong>📩 <a href="mailto:support@metricvibes.com" class="text-primary">support@metricvibes.com</a></strong>
 </p>
 <p>
     Our email support system is optimized for:

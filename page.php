@@ -44,13 +44,14 @@ require './pre/header.php';
 <div class="container-fluid">
     <div class="row">
         <div class="col-3 pe-0">
-            <div class="sidebar bg-white rounded shadow-sm position-sticky p-3" style="top: 50px; height: calc(100vh - 70px); overflow-y: auto;">
+            <div class="sidebar bg-white rounded shadow-sm p-3" style="position: fixed; top: 90px; left: 0; height: calc(100vh - 50px); width: 23%; overflow-y: auto; z-index: 1030;">                
                 <?php
                 $sidebarJson = __DIR__ . '/docs/sidebar.json';
                 $sidebar = json_decode(file_get_contents($sidebarJson), true);
 
                 function renderSidebar($items, $level = 0, $parentId = 'sidebar')
                 {
+                    global $slug;
                     static $count = 0;
                     if (!$items) return;
                     echo '<ul class="nav flex-column' . ($level ? ' ms-3' : '') . '">';
@@ -59,15 +60,39 @@ require './pre/header.php';
                         $id = $parentId . '-collapse-' . $count++;
                         echo '<li class="nav-item">';
                         if ($hasChildren) {
-                            // Accordion toggle
-                            echo '<a class="nav-link fw-bold" data-bs-toggle="collapse" href="#' . $id . '" role="button" aria-expanded="false" aria-controls="' . $id . '">'
-                                . $item['title'] .
-                                ' <span class="float-end">&#9660;</span></a>';
+                            echo '<a class="nav-link fw-bold d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#' . $id . '" role="button" aria-expanded="false" aria-controls="' . $id . '">'
+                                . '<span><span class="sidebar-icon"><i class="fa fa-folder"></i></span>' . $item['title'] . '</span>'
+                                . '<span class="float-end">'
+                                . '<span class="collapse-arrow" data-bs-toggle="collapse" data-bs-target="#' . $id . '" aria-expanded="false">&#10095;</span>'
+                                . '</span></a>';
+                            echo <<<EOT
+                            <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                var collapseEl = document.getElementById('$id');
+                                var arrow = document.querySelector('a[href="#$id"] .collapse-arrow');
+                                if (collapseEl && arrow) {
+                                    collapseEl.addEventListener('show.bs.collapse', function () {
+                                        arrow.innerHTML = '&#9013;';
+                                    });
+                                    collapseEl.addEventListener('hide.bs.collapse', function () {
+                                        arrow.innerHTML = '&#10095;';
+                                    });
+                                    // Set initial state
+                                    if (collapseEl.classList.contains('show')) {
+                                        arrow.innerHTML = '&#9013;';
+                                    }
+                                }
+                            });
+                            </script>
+                            EOT;
                             echo '<div class="collapse" id="' . $id . '">';
                             renderSidebar($item['children'], $level + 1, $id);
                             echo '</div>';
                         } elseif (isset($item['slug'])) {
-                            echo '<a class="nav-link' . ($level ? ' small' : ' fw-bold') . '" href="/Documentation_QuerySafe/docs/' . $item['slug'] . '">' . $item['title'] . '</a>';
+                            $isActive = ($item['slug'] === $slug) ? ' active' : '';
+                            echo '<a class="nav-link' . ($level ? ' small' : ' fw-bold') . $isActive . '" href="/Documentation_QuerySafe/docs/' . $item['slug'] . '">'
+                                . '<span class="sidebar-icon"><i class="fa fa-file-alt"></i></span>'
+                                . $item['title'] . '</a>';
                         } else {
                             echo '<span class="fw-bold">' . $item['title'] . '</span>';
                         }
@@ -80,13 +105,29 @@ require './pre/header.php';
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
             </div>
         </div>
-        <div class="col-6 pb-3 px-0 mt-1">
-            <div class="container-fluid main-content border p-5" >
+        <div class="col-6 pb-3 px-0 mt-5">
+            <div class="container-fluid main-content p-5" >
                 <h1 class="display-4"><?= htmlspecialchars($page['title']) ?></h1>
                 <hr>
                 <?php
                 if (isset($page['path']) && file_exists($page['path'])) {
-                    include $page['path'];
+                    $content = file_get_contents($page['path']);
+                    // Add id to every <h2> if not present
+                    $content = preg_replace_callback(
+                        '/<h2([^>]*)>(.*?)<\/h2>/i',
+                        function ($matches) {
+                            $plain = strip_tags($matches[2]);
+                            $id = strtolower(str_replace(' ', '-', preg_replace('/[^a-zA-Z0-9\s]/', '', $plain)));
+                            // If id already present, don't add again
+                            if (strpos($matches[1], 'id=') === false) {
+                                return '<h2 id="' . $id . '"' . $matches[1] . '>' . $matches[2] . '</h2>';
+                            } else {
+                                return $matches[0];
+                            }
+                        },
+                        $content
+                    );
+                    echo $content;
                 } elseif (isset($page['sections'])) {
                     foreach ($page['sections'] as $section) {
                         echo '<h2 id="' . strtolower(str_replace(' ', '-', preg_replace('/[^a-zA-Z0-9\s]/', '', $section['heading']))) . '">'
@@ -116,8 +157,8 @@ require './pre/header.php';
                 <?php endif; ?>
             </div>
         </div>
-        <div class="col-3">
-            <div class="onpage-nav position-sticky" style="top: 80px;">
+        <div class="col-3 bg-white rounded shadow-sm">
+            <div class="onpage-nav " style="position:fixed; top: 100px;">
                 <h5 class="mb-3" style="color: var(--primary-color);">On This Page</h5>
                 <ul class="nav flex-column">
                     <?php
@@ -129,7 +170,7 @@ require './pre/header.php';
                                 $id = strtolower(str_replace(' ', '-', preg_replace('/[^a-zA-Z0-9\s]/', '', $section['heading'])));
                                 $headings[] = [
                                     'id' => $id,
-                                    'text' => $section['heading']
+                                    'text' => '<span style="color: #8f4be9;">' . htmlspecialchars($section['heading']) . '</span>'
                                 ];
                             }
                         }
@@ -160,3 +201,138 @@ require './pre/header.php';
         </div>
     </div>
 </div>
+                        
+<!-- Offcanvas Sidebar for Mobile -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="mobileSidebarLabel">Menu</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body p-0">
+    <?php renderSidebar($sidebar); ?>
+  </div>
+</div>
+
+<div class="breadcrumb-mobile" id="mobileBreadcrumb">
+    On This Page / <span id="currentSection"><?= htmlspecialchars($page['title']) ?></span>
+</div>
+
+<style>
+/* Professional Sidebar Styles */
+
+h2 {
+    color: #8f4be9; 
+}
+
+.sidebar {
+    background: #fff;
+    border-right: 1.5px solid #ece6f9;
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 24px rgba(143, 75, 233, 0.07);
+    padding: 2rem 1.2rem 2rem 1.2rem;
+    min-height: 90vh;
+}
+
+.sidebar .nav {
+    gap: 0.25rem;
+}
+
+.sidebar .nav-link {
+    color: #6c4bb6;
+    font-weight: 500;
+    border-radius: 0.7rem;
+    padding: 0.6rem 1.1rem;
+    margin-bottom: 0.2rem;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+    font-size: 1.08rem;
+    display: flex;
+    align-items: center;
+}
+
+/* .sidebar .nav-link.fw-bold {
+    font-weight: 700;
+    color: #8f4be9;
+    background: #f7f3fd;
+} */
+
+.sidebar .nav-link.active, .sidebar .nav-link:hover, .sidebar .nav-link:focus {
+    background: #e9d8fd;
+    color: #8f4be9;
+    box-shadow: 0 2px 8px rgba(143, 75, 233, 0.08);
+    text-decoration: none;
+}
+
+.sidebar .nav-link .sidebar-icon {
+    margin-right: 0.7em;
+    font-size: 1.1em;
+    opacity: 0.7;
+}
+
+.sidebar .nav-item {
+    margin-bottom: 0.15rem;
+}
+
+@media (max-width: 415px) {
+    .sidebar {
+        display: none !important;
+    }
+    .col-3, .col-3.bg-white {
+        display: none !important;
+    }
+    .col-6, .main-content {
+        width: 100% !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 1rem !important;
+    }
+    .d-flex.justify-content-center.mt-4.me-2 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        margin: 1.5rem 0 0 0 !important;
+    }
+    .nav-btn {
+        min-width: unset !important;
+        width: 100%;
+        font-size: 1rem !important;
+        padding: 0.6rem 0.5rem !important;
+        border-radius: 1.2rem !important;
+    }
+    .onpage-nav {
+        display: none !important;
+    }
+    .breadcrumb-mobile {
+        display: flex !important;
+        font-size: 1rem;
+        margin: 1rem 0 0.5rem 0;
+        padding: 0 1rem;
+        color: #8f4be9;
+        gap: 0.5rem;
+        align-items: center;
+    }
+}
+.breadcrumb-mobile {
+    display: none;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if(window.innerWidth <= 415) {
+        // Collect all h2s
+        const headings = Array.from(document.querySelectorAll('.main-content h2[id]'));
+        const breadcrumb = document.getElementById('currentSection');
+        function updateBreadcrumb() {
+            let current = headings[0];
+            for (const h of headings) {
+                const rect = h.getBoundingClientRect();
+                if (rect.top - 80 < 0) current = h;
+            }
+            if (current && breadcrumb) {
+                breadcrumb.textContent = current.textContent;
+            }
+        }
+        window.addEventListener('scroll', updateBreadcrumb);
+        updateBreadcrumb();
+    }
+});
+</script>

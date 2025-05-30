@@ -1,5 +1,5 @@
 
-<h2>2. Large Contentful Paint (LCP)</h2>
+<h2>2. <a href="https://web.dev/large-contentful-paint/" target="_blank" class="text-primary">Large Contentful Paint (LCP)</a></h2>
 <p>
     <strong>Definition:</strong> Measures when the main content area of the chatbot (like the chat window, greeting message, or document response area) is fully visible.
 </p>

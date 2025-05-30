@@ -1,5 +1,5 @@
 
-<h2>3. Total Blocking Time (TBT)</h2>
+<h2>3. <a href="https://web.dev/total-blocking-time/" target="_blank" class="text-primary">Total Blocking Time (TBT)</a></h2>
 <p>
     <strong>Definition:</strong> TBT measures the time your chatbot takes to become responsive after the page starts loading.
 </p>

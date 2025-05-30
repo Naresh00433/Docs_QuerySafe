@@ -1,7 +1,7 @@
 
 <h2>🚀 Latest Upgrades & Enhancements – Making QuerySafe Even Better</h2>
 <p>
-    At QuerySafe by Metric Vibes, we are constantly working to deliver a faster, smarter, and more user-friendly chatbot platform. Our latest upgrades are focused on optimizing performance, enhancing usability, and introducing new features to improve your overall chatbot-building experience.
+    At <a href="https://querysafe.in/" target="_blank" class="text-primary">QuerySafe</a> by <a href="https://metricvibes.com/" target="_blank" class="text-primary">Metric Vibes</a>, we are constantly working to deliver a faster, smarter, and more user-friendly <a href="https://querysafe.in/chatbot/create/" target="_blank" class="text-primary">chatbot</a> platform. Our latest upgrades are focused on optimizing performance, enhancing usability, and introducing new features to improve your overall chatbot-building experience.
 </p>
 <p>
     Whether you're a beginner or an advanced user, these updates ensure a more seamless interaction with your intelligent assistant.

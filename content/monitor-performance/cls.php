@@ -1,5 +1,5 @@
 
-<h2>5. Cumulative Layout Shift (CLS)</h2>
+<h2>5. <a href="https://web.dev/cumulative-layout-shift/" target="_blank" class="text-primary">Cumulative Layout Shift (CLS)</a></h2>
 <p>
     <strong>Definition:</strong> CLS measures the visual stability of your chatbot UI during load and interaction.
 </p>

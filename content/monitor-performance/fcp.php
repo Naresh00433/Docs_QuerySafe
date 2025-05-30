@@ -12,7 +12,7 @@
     Below are the core web performance metrics used to assess your chatbot's frontend behavior — based on modern user experience standards and aligned with Google’s Web Vitals framework:
 </p>
 
-<h2>1. First Contentful Paint (FCP)</h2>
+<h2>1. <a href="https://web.dev/first-contentful-paint/" target="_blank" class="text-primary">First Contentful Paint (FCP)</a></h2>
 <p>
     <strong>Definition:</strong> Measures how quickly the first piece of content appears after the chatbot is triggered or the page is loaded.<br>
     For chatbots, this means the chat icon, loader, or welcome UI appearing quickly to the user.<br>

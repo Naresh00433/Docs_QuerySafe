@@ -16,11 +16,11 @@
 
 <body>
     <!-- Header start -->
-    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary px-3">
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary px-3 py-4">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="index.php">
                 <img src="./assets/images/Logo/logo-QS.png" alt="QuerySafe Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
-                QuerySafe
+                <span style="color:#8f4be9; font-weight: 700; font-size:24px;">QuerySafe</span>
             </a>
         </div>
     </nav>
@@ -45,6 +45,8 @@
             </div>
         </div>
     </div>
+
+    
 
 </body>
 

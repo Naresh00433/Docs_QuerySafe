@@ -1,5 +1,5 @@
 
-<h2>4. Speed Index (SI)</h2>
+<h2>4. <a href="https://web.dev/speed-index/" target="_blank" class="text-primary">Speed Index (SI)</a></h2>    
 <p>
     <strong>Definition:</strong> Speed Index evaluates how quickly visible content is displayed during page load.
 </p>
