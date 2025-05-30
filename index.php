@@ -7,7 +7,7 @@ require_once './pre/head.php';
 <body>
     <main>
         <!-- Header start -->
-        <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary px-3">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="index.php">
                     <img src="./assets/images/Logo/logo-QS.png" alt="QuerySafe Logo" width="30" height="30" class="d-inline-block align-text-top me-2">

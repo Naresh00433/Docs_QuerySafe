@@ -87,31 +87,64 @@ require './pre/header.php';
         <div class="col-6">
             <div class="container-fluid main-content border p-5" style="margin-top: 20px;">
                 <h1 class="display-4"><?= htmlspecialchars($page['title']) ?></h1>
-                <?php foreach ($page['sections'] as $section): ?>
-                    <h2 id="<?= strtolower(str_replace(' ', '-', preg_replace('/[^a-zA-Z0-9\s]/', '', $section['heading']))) ?>">
-                        <?= htmlspecialchars($section['heading']) ?>
-                    </h2>
-                    <?php if (isset($section['lead'])): ?>
-                        <p class="lead"><?= htmlspecialchars($section['lead']) ?></p>
-                    <?php endif; ?>
-                    <p><?= nl2br(htmlspecialchars($section['content'])) ?></p>
-                <?php endforeach; ?>
+                <?php
+                if (isset($page['path']) && file_exists($page['path'])) {
+                    include $page['path'];
+                } elseif (isset($page['sections'])) {
+                    foreach ($page['sections'] as $section) {
+                        echo '<h2 id="' . strtolower(str_replace(' ', '-', preg_replace('/[^a-zA-Z0-9\s]/', '', $section['heading']))) . '">'
+                            . htmlspecialchars($section['heading']) . '</h2>';
+                        if (isset($section['lead'])) {
+                            echo '<p class="lead">' . htmlspecialchars($section['lead']) . '</p>';
+                        }
+                        echo '<p>' . nl2br(htmlspecialchars($section['content'])) . '</p>';
+                    }
+                } else {
+                    echo "<p>No content available.</p>";
+                }
+                ?>
             </div>
         </div>
         <div class="col-3">
-            <div class="onpage-nav  position-sticky" style="top: 70px;">
-                <h5 class="mb-3" style="color: var(--primary-color);">On This Page</h5>
-                <ul class="nav flex-column">
-                    <?php foreach ($page['sections'] as $section): ?>
-                        <?php if (isset($section['heading'])): ?>
-                            <li class="nav-item mb-2 ms-2   ">
-                                <a class="nav-link p-0" href="#<?= strtolower(str_replace(' ', '-', preg_replace('/[^a-zA-Z0-9\s]/', '', $section['heading']))) ?>">
-                                    <?= htmlspecialchars($section['heading']) ?>
-                                </a>
-                            </li>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </ul>
+            <div class="onpage-nav position-sticky" style="top: 70px;">
+            <h5 class="mb-3" style="color: var(--primary-color);">On This Page</h5>
+            <ul class="nav flex-column">
+                <?php
+                // Collect h2 headings from main content
+                $headings = [];
+                if (isset($page['sections'])) {
+                foreach ($page['sections'] as $section) {
+                    if (isset($section['heading'])) {
+                    $id = strtolower(str_replace(' ', '-', preg_replace('/[^a-zA-Z0-9\s]/', '', $section['heading'])));
+                    $headings[] = [
+                        'id' => $id,
+                        'text' => $section['heading']
+                    ];
+                    }
+                }
+                } elseif (isset($page['path']) && file_exists($page['path'])) {
+                // Parse headings from included file
+                $content = file_get_contents($page['path']);
+                if (preg_match_all('/<h2[^>]*>(.*?)<\/h2>/i', $content, $matches)) {
+                    foreach ($matches[1] as $headingText) {
+                    $plain = strip_tags($headingText);
+                    $id = strtolower(str_replace(' ', '-', preg_replace('/[^a-zA-Z0-9\s]/', '', $plain)));
+                    $headings[] = [
+                        'id' => $id,
+                        'text' => $plain
+                    ];
+                    }
+                }
+                }
+                foreach ($headings as $heading):
+                ?>
+                <li class="nav-item mb-2 ms-2">
+                    <a class="nav-link p-0" href="#<?= $heading['id'] ?>">
+                    <?= htmlspecialchars($heading['text']) ?>
+                    </a>
+                </li>
+                <?php endforeach; ?>
+            </ul>
             </div>
         </div>
     </div>

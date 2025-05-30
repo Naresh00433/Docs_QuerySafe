@@ -2,297 +2,127 @@
   {
     "slug": "introduction",
     "title": "Introduction",
-    "sections": [
-      {
-        "heading": "Welcome",
-        "lead": "Welcome to the official documentation of QuerySafe – a secure and intelligent chatbot platform developed by Metric Vibes.",
-        "content": "This guide provides everything you need to understand, build, customize, and deploy powerful chatbots tailored to your business or application needs.\n\nWhether you're a developer, product manager, or tech enthusiast, this documentation offers a full-stack overview — from initial setup to advanced customization — for making the most of QuerySafe’s AI-powered conversational capabilities."
-      },
-      {
-        "heading": "Quick Start Guide: Launch Your First Chatbot in Minutes",
-        "content": "If you're new to QuerySafe, start here. Our step-by-step Quick Start Guide helps you:\n\n- Understand the QuerySafe dashboard and tools\n- Build your first AI chatbot from scratch\n- Integrate documents for instant knowledge extraction\n- Test and refine chatbot responses\n- Deploy your chatbot on your website or internal platform\n\nThis section is beginner-friendly and ideal for those exploring chatbot development for the first time."
-      },
-      {
-        "heading": "Project Objective: Why QuerySafe?",
-        "lead": "QuerySafe is built with a clear mission:\n\nTo create a secure, document-driven chatbot platform that delivers fast, relevant, and user-friendly information access.",
-        "content": "Core Goals:\n✅ Simplify document-based knowledge retrieval\nAllow users to upload PDFs, DOCX, and other files to extract key information conversationally.\n\n✅ Deliver an intuitive chatbot interface\nSeamlessly interact with uploaded documents, knowledge bases, and structured data.\n\n✅ Ensure security and data privacy\nAll user interactions are encrypted and stored with compliance in mind."
-      }
-    ]
+    "path": "./content/introduction/introduction.php" 
   },
   {
     "slug": "get-started",
     "title": "How To Register",
-    "sections": [
-      {
-        "heading": "Get Started",
-        "content": "To begin your chatbot journey with QuerySafe:\n\n1. Open your browser and go to the QuerySafe official website.\n2. On the homepage, click the “Get Started” button located at the top-right corner.\n3. You’ll be redirected to the Sign-Up page where you can create your account.\n\n💡 Tip: Make sure you’re on a secure internet connection for the best experience.\n\n<img src=\"./assets/images/get-started.jpeg\" alt=\"Homepage with 'Get Started' button\" style=\"max-width:100%;height:auto;\">"
-      }
-    ]
+    "path": "./content/how-to-register/get-started.php"
   },
   {
     "slug": "signup",
     "title": "How To Register",
-    "sections": [
-      {
-        "heading": "Sign Up",
-        "content": "On the Sign-Up page, fill in your details to create a secure account:\n\n- Full Name\n- Email Address\n- Password\n- Confirm Password\n\n✅ Check the Terms & Conditions box after reading them thoroughly.\n\nThen, click the “Sign Up” button to create your account.\n\nOnce done, you’ll automatically be redirected to the Sign-In page."
-      }
-    ]
+    "path": "./content/how-to-register/signup.php"
   },
   {
     "slug": "signin",
     "title": "How To Register",
-    "sections": [
-      {
-        "heading": "Sign In",
-        "content": "Now that your account is created:\n\n- Enter your registered email address.\n- Enter your password.\n- Click “Sign In” to access your account.\n\nYou will be redirected to the QuerySafe Dashboard."
-      }
-    ]
+    "path": "./content/how-to-register/signin.php"
   },
   {
     "slug": "dashboard",
     "title": "How To Register",
-    "sections": [
-      {
-        "heading": "Access the Dashboard",
-        "content": "Welcome to your QuerySafe Dashboard — the central hub for creating, managing, and deploying your chatbots.\n\nHere you can:\n\n- Upload documents (PDF, DOCX, TXT)\n- Create and train chatbots using document content\n- Customize chatbot responses and appearance\n- View analytics and user interactions\n- Manage settings and integrations"
-      }
-    ]
+    "path": "./content/how-to-register/dashboard.php"
   },
   {
     "slug": "create-new-chatbot",
     "title": "Create Chatbot",
-    "sections": [
-      {
-        "heading": "Create Your First Chatbot with QuerySafe",
-        "content": "A chatbot is an AI-powered software application that interacts with users through natural language, simulating human conversation. Chatbots are used to automate support, extract information, and answer document-related queries in real-time.\n\nWith QuerySafe, you can easily create a smart, document-driven chatbot in just a few steps — no coding required!"
-      },
-      {
-        "heading": "Step 1: Create a New Chatbot",
-        "content": "Once you’ve successfully logged into the QuerySafe dashboard:\n\n- Click on the “Create New Chatbot” button.\n- Upload a custom logo to personalize your chatbot.\n- Enter the Chatbot Name – e.g., “Legal Assistant” or “HR Bot.”\n- Add a clear and informative description that explains the bot’s purpose."
-      }
-    ]
+    "path": "./content/create-chatbot/create-chatbot.php"
   },
   {
     "slug": "upload-document",
     "title": "Create Chatbot",
-    "sections": [
-      {
-        "heading": "Step 2: Upload Relevant Documents",
-        "content": "Your chatbot needs context — and that comes from your documents!\n\n- Click on “Upload Documents.”\n- Select one or more files (PDF, DOCX, TXT).\n- Each document should be under 10MB in size.\n- You can upload multiple files to expand the chatbot’s knowledge base."
-      }
-    ]
+    "path": "./content/create-chatbot/upload-document.php"
   },
   {
     "slug": "model-train",
     "title": "Create Chatbot",
-    "sections": [
-      {
-        "heading": "Step 3: Train the Model",
-        "content": "After document upload, QuerySafe will automatically begin training your chatbot.\n\nThe platform uses advanced NLP (Natural Language Processing) to analyze and learn from your content.\n\nTraining time may vary depending on document size and complexity.\n\nWhile training, you can explore the dashboard or check other chatbot settings."
-      }
-    ]
+    "path": "./content/create-chatbot/model-train.php"
   },
   {
     "slug": "ready-to-use",
     "title": "Create Chatbot",
-    "sections": [
-      {
-        "heading": "Step 4: Start Conversing – Your Chatbot is Ready!",
-        "content": "Once the training is complete:\n\n- You can begin chatting with your AI bot instantly.\n- Ask anything related to the documents you uploaded.\n- There are no limits on questions — use it for research, support, HR, legal, and more."
-      }
-    ]
+    "path": "./content/create-chatbot/ready-to-use.php"
   },
   {
     "slug": "start-conversation",
     "title": "Create Chatbot",
-    "sections": [
-      {
-        "heading": "Step 5: Check and Manage Conversations",
-        "content": "QuerySafe automatically stores all your chat history for easy access and future reference.\n\n- Review past conversations anytime.\n- Use snippets or chat transcripts to embed content on external websites or reports.\n\nGreat for audits, compliance, and knowledge sharing."
-      },
-      {
-        "heading": "Start Conversing – Your Chatbot is Ready!",
-        "content": "Once the training is complete:\n\n- You can begin chatting with your AI bot instantly.\n- Ask anything related to the documents you uploaded.\n- There are no limits on questions — use it for research, support, HR, legal, and more."
-      }
-    ]
+    "path": "./content/create-chatbot/start-conversation.php"
   },
   {
     "slug": "integrate-to-website",
     "title": "Integrate To Website",
-    "sections": [
-      {
-        "heading": "Integrate QuerySafe Chatbot into Your Website",
-        "content": "Bringing your intelligent chatbot to your own website has never been easier. With QuerySafe, you can seamlessly embed your document-trained chatbot into any external web page — no advanced coding or technical skills required.\n\n🔧 Easy Integration with Copy-Paste Snippet\nOnce your chatbot is live and trained:\n\n- A ready-to-use embed snippet is automatically generated.\n- Simply copy and paste the code into the `<body>` section of your website.\n- That’s it — the chatbot will appear on your site and be ready to interact with visitors in real time.\n\n⚡ No setup complexity. No developer required. Just copy, paste, and deploy.\n\nStart enhancing your website with intelligent, document-powered conversation today — all powered by QuerySafe."
-      }
-    ]
+    "path": "./content/integrate-website/integrate-website.php"
   },
   {
     "slug": "fcp",
     "title": "Monitor Chatbot Performance",
-    "sections": [
-      {
-        "heading": "Monitor Chatbot Performance in Real-Time",
-        "content": "With QuerySafe, you’re not just building chatbots — you’re optimizing them for peak speed, responsiveness, and user experience. Our built-in performance monitoring tools help you track, analyze, and improve your chatbot’s behavior, ensuring it runs smoothly across all devices and browsers.\n\nMonitoring the performance of your chatbot is essential to deliver fast, seamless, and frustration-free conversations to your users."
-      },
-      {
-        "heading": "Key Metrics to Monitor Chatbot Performance",
-        "content": "Below are the core web performance metrics used to assess your chatbot's frontend behavior — based on modern user experience standards and aligned with Google’s Web Vitals framework:"
-      },
-      {
-        "heading": "1. First Contentful Paint (FCP)",
-        "content": "Definition: Measures how quickly the first piece of content appears after the chatbot is triggered or the page is loaded.\n\nFor chatbots, this means the chat icon, loader, or welcome UI appearing quickly to the user.\n\nA fast FCP improves user trust, as it shows the chatbot is active."
-      }
-    ]
+    "path": "./content/monitor-performance/fcp.php"
   },
   {
     "slug": "lcp",
     "title": "Monitor Chatbot Performance",
-    "sections": [
-      {
-        "heading": "2. Large Contentful Paint (LCP)",
-        "content": "Definition: Measures when the main content area of the chatbot (like the chat window, greeting message, or document response area) is fully visible.\n\nA fast LCP ensures your chatbot appears fully usable faster, improving the initial impression.\n\nEspecially important for content-heavy bots that use media, document previews, or long text blocks."
-      }
-    ]
+    "path": "./content/monitor-performance/lcp.php"
   },
   {
     "slug": "tbt",
     "title": "Monitor Chatbot Performance",
-    "sections": [
-      {
-        "heading": "3. Total Blocking Time (TBT)",
-        "content": "Definition: TBT measures the time your chatbot takes to become responsive after the page starts loading.\n\nHigh TBT can lead to input lags or message delays, creating frustration for users.\n\nQuerySafe optimizes TBT to keep chat interactions fast and real-time."
-      }
-    ]
+    "path": "./content/monitor-performance/tbt.php"
   },
   {
     "slug": "si",
     "title": "Monitor Chatbot Performance",
-    "sections": [
-      {
-        "heading": "4. Speed Index (SI)",
-        "content": "Definition: Speed Index evaluates how quickly visible content is displayed during page load.\n\nA lower Speed Index means your chatbot feels faster and more interactive to users.\n\nHelps maintain a snappy experience even in low-bandwidth environments."
-      }
-    ]
+    "path": "./content/monitor-performance/si.php"
   },
   {
     "slug": "cls",
     "title": "Monitor Chatbot Performance",
-    "sections": [
-      {
-        "heading": "5. Cumulative Layout Shift (CLS)",
-        "content": "Definition: CLS measures the visual stability of your chatbot UI during load and interaction.\n\nIf buttons, chat windows, or elements move unexpectedly, it increases CLS.\n\nA low CLS ensures your chatbot has a stable, professional interface with no annoying UI jumps."
-      },
-      {
-        "heading": "🎯 Optimize for a Seamless User Experience",
-        "content": "To achieve the best possible performance:\n\n- Keep all the above metrics as low as possible (preferably under 2 seconds).\n- Regularly monitor chatbot interactions using built-in QuerySafe analytics.\n- Optimize document size and chatbot logic to minimize load and wait times.\n\nBy optimizing your chatbot for speed and stability, you’ll improve engagement, reduce bounce rates, and deliver an outstanding user experience — every time."
-      }
-    ]
+    "path": "./content/monitor-performance/cls.php"
   },
   {
     "slug": "contact-us",
     "title": "Help & Support",
-    "sections": [
-      {
-        "heading": "🛠️ Help & Support – We're Here for You",
-        "content": "At QuerySafe by Metric Vibes, we are committed to providing exceptional user support to ensure your chatbot experience is smooth, productive, and hassle-free. Whether you're a first-time user or an enterprise client, our support ecosystem is designed to help you troubleshoot problems, learn faster, and get the most out of our intelligent chatbot platform.\n\nExplore the multiple support channels below to get help exactly when and where you need it."
-      },
-      {
-        "heading": "📞 1. Contact Us – Direct Chatbot Assistance",
-        "content": "If you're experiencing any issues or have specific questions about using the QuerySafe platform, you can reach out to our support team directly through our \"Contact Us\" page. Our dedicated support agents are always ready to:\n\n- Listen to your problem\n- Provide tailored solutions\n- Offer guidance based on your chatbot usage\n\nWe aim to resolve your queries quickly and effectively, helping you return to your workflow without delay."
-      },
-      {
-        "slug": "email-support",
-        "title": "Help & Support",
-        "sections": [
-          {
-            "heading": "📧 2. Email Support – Fast, Reliable Resolution",
-            "content": "For more detailed concerns, you can email us at\n📩 support@metricvibes.com\nOur email support system is optimized for:\n\n- Quick turnaround times\n- Detailed step-by-step solutions\n- Personalized technical support\n\nWe ensure every query is reviewed carefully and answered with simple, actionable steps so you can resolve issues independently, saving both time and effort."
-          }
-        ]
-      },
-      {
-        "slug": "video-tutorials",
-        "title": "Help & Support",
-        "sections": [
-          {
-            "heading": "🎥 3. Video Tutorials – Learn by Watching",
-            "content": "Sometimes a visual walkthrough is more helpful than written instructions. That’s why we’ve created a collection of easy-to-follow video tutorials that walk you through every essential feature of QuerySafe.\n\nFrom setting up your first chatbot to uploading documents and training the model — we’ve covered it all.\n\n- Available 24/7 on our Help Center and YouTube Channel\n- Ideal for beginners and non-technical users\n- Updated regularly with the latest platform changes"
-          }
-        ]
-      }
-    ]
+    "path": "./content/help-support/contactus.php"
+  },
+  {
+    "slug": "email-support",
+    "title": "Help & Support",
+    "path": "./content/help-support/email-support.php"
+  },
+  {
+    "slug": "video-tutorials",
+    "title": "Help & Support",
+    "path": "./content/help-support/video-tutorials.php"
   },
   {
     "slug": "faqs",
     "title": "Help & Support",
-    "sections": [
-      {
-        "heading": "❓ 4. FAQs – Instant Answers to Common Questions",
-        "content": "Our Frequently Asked Questions (FAQ) page is your first stop for quick answers. We’ve compiled responses to the most commonly asked questions, including:\n\n💬 How to start a conversation with the chatbot?\n\n🤖 What can the chatbot do — and what are its limitations?\n\n⚠️ What to do if the chatbot is slow or not responding?\n\nAll FAQs are written in plain language and are updated based on user feedback and real-world issues."
-      }
-    ]
+    "path": "./content/help-support/faq.php"
   },
   {
     "slug": "user-guide",
     "title": "Help & Support",
-    "sections": [
-      {
-        "heading": "📘 5. User Guide – In-Depth Documentation",
-        "content": "Need a full understanding of how QuerySafe works? Download our official User Guide for a comprehensive reference on:\n\n🛠️ How to use all features of the chatbot effectively\n\n⚙️ Understanding platform settings and configurations\n\n💡 Pro tips to enhance chatbot interaction and accuracy\n\nThe user guide is provided in PDF format and can be accessed anytime — even offline."
-      },
-      {
-        "heading": "💡 Stay Supported, Stay Productive",
-        "content": "No matter where you are in your chatbot journey — from sign-up to scale-up — QuerySafe’s support resources are designed to empower you. We combine proactive customer service, detailed educational content, and real-time help to make sure you're never stuck or unsupported."
-      }
-    ]
+    "path": "./content/help-support/user-guide.php"
   },
   {
     "slug": "performance-optimization",
     "title": "Upgrades & Enhancements",
-    "sections": [
-      {
-        "heading": "🚀 Latest Upgrades & Enhancements – Making QuerySafe Even Better",
-        "content": "At QuerySafe by Metric Vibes, we are constantly working to deliver a faster, smarter, and more user-friendly chatbot platform. Our latest upgrades are focused on optimizing performance, enhancing usability, and introducing new features to improve your overall chatbot-building experience.\n\nWhether you're a beginner or an advanced user, these updates ensure a more seamless interaction with your intelligent assistant."
-      },
-      {
-        "heading": "⚡ Performance Optimization",
-        "content": "We’ve significantly improved the backend infrastructure to provide faster load times and reduced model training delays. Here’s what’s new:\n\n- Reduced chatbot model training time by streamlining our document parsing and machine learning pipeline.\n- Improved initial load speed of the chatbot interface and dashboard.\n- Faster indexing of uploaded PDFs and documents, ensuring instant availability for querying."
-      }
-    ]
+    "path": "./content/upgrade/performance-optimization.php"
+
   },
   {
     "slug": "ui-enhancement",
     "title": "Upgrades & Enhancements",
-    "sections": [
-      {
-        "heading": "🎨 UI Enhancements for Better User Experience",
-        "content": "Visual experience matters. We've redesigned key parts of the UI to ensure clean layout transitions, smoother animations, and minimal layout shift:\n\n- Streamlined dashboard layout for quicker access to chatbot creation and document uploads.\n- Introduced mobile-responsive design for seamless use across devices.\n- Enhanced typography, button spacing, and real-time feedback indicators."
-      }
-    ]
+    "path": "./content/upgrade/ui-enhancement.php"
   },
   {
     "slug": "improved-response-time",
     "title": "Upgrades & Enhancements",
-    "sections": [
-      {
-        "heading": "⚙️ Improved Response Time (Lower Latency)",
-        "content": "Backend APIs have been fine-tuned to reduce chatbot response latency — meaning faster and smarter replies to your queries.\n\n- Faster response delivery from chatbot to user interface.\n- More efficient query handling through optimized backend routing and load balancing.\n- Real-time improvements in conversation fluency and accuracy."
-      }
-    ]
+    "path": "./content/upgrade/improved-response-time.php"
   },
   {
     "slug": "functionality-improvement",
     "title": "Upgrades & Enhancements",
-    "sections": [
-      {
-        "heading": "🌐 Functionality Improvements & New Features",
-        "content": "We’ve also introduced several powerful new features aimed at making QuerySafe more flexible and globally accessible:\n\n- **Multi-language support (in progress):** While currently optimized for English, support for other languages is under development to allow multilingual chatbot conversations.\n\n- **Session Memory Introduction:** Your chatbot now retains context across conversation threads, resulting in more natural and continuous dialogue flow.\n\n- **Upcoming support for document version tracking and role-based access control.**"
-      },
-      {
-        "heading": "📈 Why These Upgrades Matter",
-        "content": "Every improvement we make is aimed at one thing: helping you build smarter, faster, and more effective chatbots without any technical complexity. From UI smoothness to backend speed, from multilingual support to conversation continuity — we are evolving to meet your needs.\n\nStay tuned for more updates, and check out our Product Roadmap to see what’s coming next!"
-      }
-    ]
+    "path": "./content/upgrade/functionality-improvement.php"
   }
 ]

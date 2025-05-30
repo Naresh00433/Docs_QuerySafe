@@ -1,7 +1,6 @@
-
-<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary px-1">
     <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="index.php">
+        <a class="navbar-brand d-flex align-items-center" href="../index.php">
             <img src="../assets/images/Logo/logo-QS.png" alt="QuerySafe Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
             QuerySafe
         </a>
