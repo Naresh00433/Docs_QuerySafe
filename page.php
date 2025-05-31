@@ -41,10 +41,13 @@ if ($currentIndex !== null) {
 require './pre/head.php';
 require './pre/header.php';
 ?>
+
+
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-3 pe-0">
-            <div class="sidebar bg-white rounded shadow-sm p-3" style="position: fixed; top: 90px; left: 0; height: calc(100vh - 50px); width: 23%; overflow-y: auto; z-index: 1030;">                
+            <div class="sidebar bg-white rounded shadow-sm p-3" style="position: fixed; top: 90px; left: 0; height: calc(100vh - 50px); width: 23%; overflow-y: auto; z-index: 1030;">
                 <?php
                 $sidebarJson = __DIR__ . '/docs/sidebar.json';
                 $sidebar = json_decode(file_get_contents($sidebarJson), true);
@@ -105,8 +108,8 @@ require './pre/header.php';
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
             </div>
         </div>
-        <div class="col-6 pb-3 px-0 mt-5">
-            <div class="container-fluid main-content p-5" >
+        <div class="col-6 px-0 mt-5">
+            <div class="container-fluid main-content p-5">
                 <h1 class="display-4"><?= htmlspecialchars($page['title']) ?></h1>
                 <hr>
                 <?php
@@ -156,6 +159,9 @@ require './pre/header.php';
                     </a>
                 <?php endif; ?>
             </div>
+            <?php
+            @include './pre/footer.php';
+            ?>
         </div>
         <div class="col-3 bg-white rounded shadow-sm">
             <div class="onpage-nav " style="position:fixed; top: 100px;">
@@ -201,138 +207,151 @@ require './pre/header.php';
         </div>
     </div>
 </div>
-                        
+
 <!-- Offcanvas Sidebar for Mobile -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="mobileSidebarLabel">Menu</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body p-0">
-    <?php renderSidebar($sidebar); ?>
-  </div>
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="mobileSidebarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+        <?php renderSidebar($sidebar); ?>
+    </div>
 </div>
 
+<!-- Breadcrumb for mobile: place it right after header -->
 <div class="breadcrumb-mobile" id="mobileBreadcrumb">
     On This Page / <span id="currentSection"><?= htmlspecialchars($page['title']) ?></span>
 </div>
 
 <style>
-/* Professional Sidebar Styles */
+    /* Professional Sidebar Styles */
 
-h2 {
-    color: #8f4be9; 
-}
+    h2 {
+        color: #8f4be9;
+    }
 
-.sidebar {
-    background: #fff;
-    border-right: 1.5px solid #ece6f9;
-    border-radius: 1.2rem;
-    box-shadow: 0 4px 24px rgba(143, 75, 233, 0.07);
-    padding: 2rem 1.2rem 2rem 1.2rem;
-    min-height: 90vh;
-}
+    .sidebar {
+        background: #fff;
+        border-right: 1.5px solid #ece6f9;
+        border-radius: 1.2rem;
+        box-shadow: 0 4px 24px rgba(143, 75, 233, 0.07);
+        padding: 2rem 1.2rem 2rem 1.2rem;
+        min-height: 90vh;
+    }
 
-.sidebar .nav {
-    gap: 0.25rem;
-}
+    .sidebar .nav {
+        gap: 0.25rem;
+    }
 
-.sidebar .nav-link {
-    color: #6c4bb6;
-    font-weight: 500;
-    border-radius: 0.7rem;
-    padding: 0.6rem 1.1rem;
-    margin-bottom: 0.2rem;
-    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
-    font-size: 1.08rem;
-    display: flex;
-    align-items: center;
-}
+    .sidebar .nav-link {
+        color: #6c4bb6;
+        font-weight: 500;
+        border-radius: 0.7rem;
+        padding: 0.6rem 1.1rem;
+        margin-bottom: 0.2rem;
+        transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+        font-size: 1.08rem;
+        display: flex;
+        align-items: center;
+    }
 
-/* .sidebar .nav-link.fw-bold {
+    /* .sidebar .nav-link.fw-bold {
     font-weight: 700;
     color: #8f4be9;
     background: #f7f3fd;
 } */
 
-.sidebar .nav-link.active, .sidebar .nav-link:hover, .sidebar .nav-link:focus {
-    background: #e9d8fd;
-    color: #8f4be9;
-    box-shadow: 0 2px 8px rgba(143, 75, 233, 0.08);
-    text-decoration: none;
-}
-
-.sidebar .nav-link .sidebar-icon {
-    margin-right: 0.7em;
-    font-size: 1.1em;
-    opacity: 0.7;
-}
-
-.sidebar .nav-item {
-    margin-bottom: 0.15rem;
-}
-
-@media (max-width: 415px) {
-    .sidebar {
-        display: none !important;
-    }
-    .col-3, .col-3.bg-white {
-        display: none !important;
-    }
-    .col-6, .main-content {
-        width: 100% !important;
-        max-width: 100vw !important;
-        margin: 0 !important;
-        padding: 1rem !important;
-    }
-    .d-flex.justify-content-center.mt-4.me-2 {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.5rem;
-        margin: 1.5rem 0 0 0 !important;
-    }
-    .nav-btn {
-        min-width: unset !important;
-        width: 100%;
-        font-size: 1rem !important;
-        padding: 0.6rem 0.5rem !important;
-        border-radius: 1.2rem !important;
-    }
-    .onpage-nav {
-        display: none !important;
-    }
-    .breadcrumb-mobile {
-        display: flex !important;
-        font-size: 1rem;
-        margin: 1rem 0 0.5rem 0;
-        padding: 0 1rem;
+    .sidebar .nav-link.active,
+    .sidebar .nav-link:hover,
+    .sidebar .nav-link:focus {
+        background: #e9d8fd;
         color: #8f4be9;
-        gap: 0.5rem;
-        align-items: center;
+        box-shadow: 0 2px 8px rgba(143, 75, 233, 0.08);
+        text-decoration: none;
     }
-}
-.breadcrumb-mobile {
-    display: none;
-}
+
+    .sidebar .nav-link .sidebar-icon {
+        margin-right: 0.7em;
+        font-size: 1.1em;
+        opacity: 0.7;
+    }
+
+    .sidebar .nav-item {
+        margin-bottom: 0.15rem;
+    }
+
+    @media (max-width: 450px) {
+        .sidebar {
+            display: none !important;
+        }
+
+        .col-3,
+        .col-3.bg-white {
+            display: none !important;
+        }
+
+        .col-6,
+        .main-content {
+            width: 100% !important;
+            max-width: 100vw !important;
+            margin: 0 !important;
+            padding: 1rem !important;
+        }
+
+        .d-flex.justify-content-center.mt-4.me-2 {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.5rem;
+            margin: 1.5rem 0 0 0 !important;
+        }
+
+        .nav-btn {
+            min-width: unset !important;
+            width: 100%;
+            font-size: 1rem !important;
+            padding: 0.6rem 0.5rem !important;
+            border-radius: 1.2rem !important;
+        }
+
+        .onpage-nav {
+            display: none !important;
+        }
+
+        .breadcrumb-mobile {
+            display: flex !important;
+            font-size: 1rem;
+            margin: 1rem 0 0.5rem 0;
+            padding: 0 1rem;
+            color: #8f4be9;
+            gap: 0.5rem;
+            align-items: center;
+        }
+    }
+
+    .breadcrumb-mobile {
+        display: none;
+    }
 </style>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    if(window.innerWidth <= 415) {
-        // Collect all h2s
-        const headings = Array.from(document.querySelectorAll('.main-content h2[id]'));
-        const breadcrumb = document.getElementById('currentSection');
-        function updateBreadcrumb() {
-            let current = headings[0];
-            for (const h of headings) {
-                const rect = h.getBoundingClientRect();
-                if (rect.top - 80 < 0) current = h;
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.innerWidth <= 415) {
+            // Collect all h2s
+            const headings = Array.from(document.querySelectorAll('.main-content h2[id]'));
+            const breadcrumb = document.getElementById('currentSection');
+
+            function updateBreadcrumb() {
+                let current = headings[0];
+                for (const h of headings) {
+                    const rect = h.getBoundingClientRect();
+                    if (rect.top - 80 < 0) current = h;
+                }
+                if (current && breadcrumb) {
+                    breadcrumb.textContent = current.textContent;
+                }
             }
-            if (current && breadcrumb) {
-                breadcrumb.textContent = current.textContent;
-            }
+            window.addEventListener('scroll', updateBreadcrumb);
+            updateBreadcrumb();
         }
-        window.addEventListener('scroll', updateBreadcrumb);
-        updateBreadcrumb();
-    }
-});
+    });
 </script>

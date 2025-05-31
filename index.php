@@ -33,7 +33,7 @@
                 <p>
                     Welcome to the official documentation of <strong>QuerySafe</strong> – a secure and intelligent chatbot platform developed by <strong>Metric Vibes</strong>.
                 </p>
-                <p >
+                <p>
                     Whether you're a developer, product manager, or tech enthusiast, this documentation offers a full-stack overview — from initial setup to advanced customization — for making the most of QuerySafe’s AI-powered conversational capabilities.
                 </p>
                 <a href="docs/introduction" class="btn btn-primary custom-doc-btn mt-4">
@@ -46,8 +46,64 @@
         </div>
     </div>
 
-    
 
+    <?php
+    @include './pre/footer.php';
+    ?>
+
+    <style>
+
+        .row.mt-5 {
+            margin-top: 100px !important;
+            margin-bottom: 135px !important;
+        }
+
+        @media (max-width: 450px) {
+            .row.mt-5.pt-5 {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 2.5rem !important;
+                padding-top: 2.5rem !important;
+            }
+
+            .col-2,
+            .col-5,
+            .col-4 {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 1rem !important;
+            }
+
+            .col-4.my-5.pb-4.ms-5 {
+                margin: 0 !important;
+                display: flex;
+                justify-content: center;
+                order: -1;
+                margin-top: 50px !important;
+            }
+
+            .col-5.mt-5 {
+                margin-top: 0 !important;
+                text-align: center;
+            }
+
+            .custom-doc-btn {
+                width: 100%;
+                font-size: 1.1rem;
+                margin-top: 1.5rem !important;
+            }
+
+            .display-3 {
+                font-size: 2rem;
+            }
+
+            .navbar-brand span {
+                font-size: 1.3rem !important;
+            }
+
+        }
+    </style>
 </body>
 
 </html>
