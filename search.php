@@ -64,24 +64,72 @@ if ($searchQuery !== '') {
                 </form>
             </div>
         </div>
-    </div>  
+    </div>
 </nav>
 
 <div class="container mt-5 pt-5">
-    <h2>Search Results for "<?= htmlspecialchars($searchQuery) ?>"</h2>
+    <?php if ($searchQuery !== ''): ?>
+        <div class="text-center my-5">
+            <h2 class="fw-bold" style="color: #8f4be9;">
+                <i class="fas fa-search me-2"></i>
+                Results for <?= htmlspecialchars($searchQuery) ?>
+            </h2>
+        </div>
+    <?php endif; ?>
     <?php if ($searchQuery === ''): ?>
         <p class="text-muted">Please enter a search term.</p>
     <?php elseif (empty($results)): ?>
         <div class="alert alert-warning mt-4">No page found matching your search.</div>
     <?php else: ?>
-        <ul class="list-group mt-3">
+        <div class="row mt-3">
             <?php foreach ($results as $doc): ?>
-                <li class="list-group-item">
-                    <a href="/Documentation_QuerySafe/docs/documentation.php?slug=<?= urlencode($doc['slug']) ?>">
-                        <?= htmlspecialchars($doc['title']) ?> / <?= htmlspecialchars($doc['slug']) ?>
+                <div class="col-md-4 mb-4">
+                    <a href="/Documentation_QuerySafe/docs/documentation.php?slug=<?= urlencode($doc['slug']) ?>" class="text-decoration-none text-dark" style="display:block; height:100%;">
+                        <div class="card h-100 shadow-sm border-0 search-result-card" style="transition: box-shadow 0.2s, transform 0.2s;">
+                            <div class="card-header" style="background-color: #e9d8fd; border-bottom: 1px solid #dee2e6;">
+                                <?php
+                                if (!function_exists('prettifySlug')) {
+                                    function prettifySlug($slug)
+                                    {
+                                        return ucwords(str_replace('-', ' ', $slug));
+                                    }
+                                }
+                                ?>
+                                <?= htmlspecialchars(prettifySlug($doc['slug'])) ?> / <?= htmlspecialchars($doc['title']) ?>
+                            </div>
+                            <div class="card-body">
+                                <?php
+                                // Fetch content from the file path specified in documentation.json
+                                $content = '';
+                                if (isset($doc['path'])) {
+                                    $docPath = __DIR__ . '/' . ltrim($doc['path'], '/');
+                                    if (file_exists($docPath)) {
+                                        $content = file_get_contents($docPath);
+                                        // Optionally strip HTML tags if needed
+                                        $content = strip_tags($content);
+                                    }
+                                }
+                                // Get content preview (first 15 words)
+                                $words = preg_split('/\s+/', $content);
+                                $preview = implode(' ', array_slice($words, 0, 15));
+                                if (count($words) > 15) {
+                                    $preview .= '...';
+                                }
+                                ?>
+                                <p class="card-text mb-2"><?= htmlspecialchars($preview) ?></p>
+                            </div>
+                        </div>
                     </a>
-                </li>
+                    <style>
+                    .search-result-card:hover {
+                        box-shadow: 0 8px 24px rgba(143, 75, 233, 0.18), 0 1.5px 6px rgba(0,0,0,0.08);
+                        transform: translateY(-4px) scale(1.03);
+                        border-color: #8f4be9;
+                        cursor: pointer;
+                    }
+                    </style>
+                </div>
             <?php endforeach; ?>
-        </ul>
+        </div>
     <?php endif; ?>
 </div>
