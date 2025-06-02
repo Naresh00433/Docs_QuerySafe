@@ -5,7 +5,7 @@
   — from initial setup to advanced customization <br>
   — for making the most of QuerySafe’s AI-powered conversational capabilities.</p>
 
-<h2>Quick Start Guide: Launch Your First Chatbot in Minutes</h2>
+<h2>Quick Start Guide</h2>
 <p>If you're new to QuerySafe, start here. Our step-by-step Quick Start Guide helps you:</p>
 <ul>
   <li>Understand the <a href="https://querysafe.in/dashboard/" target="_blank" class="text-primary">QuerySafe dashboard</a> and tools</li>
@@ -16,7 +16,7 @@
 </ul>
 <p>This section is beginner-friendly and ideal for those exploring chatbot development for the first time.</p>
 
-<h2>Project Objective: Why QuerySafe?</h2>
+<h2>Objective: Why QuerySafe?</h2>
 <p><strong>QuerySafe is built with a clear mission:</strong></p>
 <p>To create a secure, document-driven chatbot platform that delivers fast, relevant, and user-friendly information access.</p>
 <p>

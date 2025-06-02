@@ -43,6 +43,10 @@ require './pre/header.php';
 ?>
 
 
+<!-- Breadcrumb for mobile: place it right after header -->
+<div class="breadcrumb-mobile" id="mobileBreadcrumb">
+    On This Page / <span id="currentSection"><?= htmlspecialchars($page['title']) ?></span>
+</div>
 
 <div class="container-fluid">
     <div class="row">
@@ -219,10 +223,6 @@ require './pre/header.php';
     </div>
 </div>
 
-<!-- Breadcrumb for mobile: place it right after header -->
-<div class="breadcrumb-mobile" id="mobileBreadcrumb">
-    On This Page / <span id="currentSection"><?= htmlspecialchars($page['title']) ?></span>
-</div>
 
 <style>
     /* Professional Sidebar Styles */
@@ -280,6 +280,7 @@ require './pre/header.php';
     .sidebar .nav-item {
         margin-bottom: 0.15rem;
     }
+    
 
     @media (max-width: 450px) {
         .sidebar {
@@ -297,6 +298,8 @@ require './pre/header.php';
             max-width: 100vw !important;
             margin: 0 !important;
             padding: 1rem !important;
+            padding-top: 0 !important;
+            margin-top: 60px !important; /* Space for header */
         }
 
         .d-flex.justify-content-center.mt-4.me-2 {
@@ -320,37 +323,48 @@ require './pre/header.php';
 
         .breadcrumb-mobile {
             display: flex !important;
+            position: fixed;
+            top: 90px; /* Adjust if your header is taller/shorter */
+            left: 0;
+            width: 100vw;
+            z-index: 1040;
             font-size: 1rem;
-            margin: 1rem 0 0.5rem 0;
-            padding: 0 1rem;
+            background-color: #f7f3fd;
+            padding: 15px 1rem 15px 30px !important;
             color: #8f4be9;
             gap: 0.5rem;
             align-items: center;
+            border-radius: 0 0 0.7rem 0.7rem;
+            box-shadow: 0 2px 8px rgba(143, 75, 233, 0.08);
+            margin: 0 !important;
         }
     }
 
-    .breadcrumb-mobile {
+    .breadcrumb-mobile {    
         display: none;
     }
 </style>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        if (window.innerWidth <= 415) {
-            // Collect all h2s
+        if (window.innerWidth <= 450) {
             const headings = Array.from(document.querySelectorAll('.main-content h2[id]'));
             const breadcrumb = document.getElementById('currentSection');
+            if (!headings.length || !breadcrumb) return;
 
             function updateBreadcrumb() {
                 let current = headings[0];
                 for (const h of headings) {
                     const rect = h.getBoundingClientRect();
-                    if (rect.top - 80 < 0) current = h;
+                    // Adjust offset for header + breadcrumb height
+                    if (rect.top - 120 < 0) current = h;
                 }
-                if (current && breadcrumb) {
+                if (current && breadcrumb.textContent !== current.textContent) {
                     breadcrumb.textContent = current.textContent;
                 }
             }
-            window.addEventListener('scroll', updateBreadcrumb);
+
+            window.addEventListener('scroll', updateBreadcrumb, { passive: true });
+            window.addEventListener('resize', updateBreadcrumb);
             updateBreadcrumb();
         }
     });

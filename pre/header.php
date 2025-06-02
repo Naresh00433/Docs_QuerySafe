@@ -18,7 +18,6 @@
                 <form class="d-flex w-25" role="search" method="get" action="/Documentation_QuerySafe/search.php">
                     <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search"
                         value="<?= isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '' ?>" />
-                    <button class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
             </div>
         </div>
