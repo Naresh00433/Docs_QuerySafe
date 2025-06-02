@@ -12,19 +12,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link rel="stylesheet" href="./assets/css/page.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
 <body>
+
     <!-- Header start -->
-    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary px-3 py-4">
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary px-1 py-4">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="index.php">
                 <img src="./assets/images/Logo/logo-QS.png" alt="QuerySafe Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
-                <span style="color:#8f4be9; font-weight: 700; font-size:24px;">QuerySafe</span>
+                <span style="color:#8f4be9; font-weight: 700; font-size: 24px;">QuerySafe</span>
             </a>
         </div>
     </nav>
     <!-- Header end -->
+
+    <!-- main content start -->
+
     <div class="container-fluid">
         <div class="row mt-5 pt-5">
             <div class="col-2"></div>
@@ -46,64 +51,12 @@
         </div>
     </div>
 
+    <!-- main content end -->
 
     <?php
     @include './pre/footer.php';
     ?>
 
-    <style>
-
-        .row.mt-5 {
-            margin-top: 100px !important;
-            margin-bottom: 135px !important;
-        }
-
-        @media (max-width: 450px) {
-            .row.mt-5.pt-5 {
-                flex-direction: column;
-                align-items: center;
-                margin-top: 2.5rem !important;
-                padding-top: 2.5rem !important;
-            }
-
-            .col-2,
-            .col-5,
-            .col-4 {
-                width: 100% !important;
-                max-width: 100% !important;
-                margin: 0 !important;
-                padding: 0 1rem !important;
-            }
-
-            .col-4.my-5.pb-4.ms-5 {
-                margin: 0 !important;
-                display: flex;
-                justify-content: center;
-                order: -1;
-                margin-top: 50px !important;
-            }
-
-            .col-5.mt-5 {
-                margin-top: 0 !important;
-                text-align: center;
-            }
-
-            .custom-doc-btn {
-                width: 100%;
-                font-size: 1.1rem;
-                margin-top: 1.5rem !important;
-            }
-
-            .display-3 {
-                font-size: 2rem;
-            }
-
-            .navbar-brand span {
-                font-size: 1.3rem !important;
-            }
-
-        }
-    </style>
 </body>
 
 </html>

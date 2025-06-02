@@ -17,4 +17,4 @@
     <strong>Definition:</strong> Measures how quickly the first piece of content appears after the chatbot is triggered or the page is loaded.<br>
     For chatbots, this means the chat icon, loader, or welcome UI appearing quickly to the user.<br>
     A fast FCP improves user trust, as it shows the chatbot is active.
-</p>
+</p>    

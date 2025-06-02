@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <link rel="stylesheet" href="../assets/css/page.css">
+</head>
 
 <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary px-1 py-4">
     <div class="container-fluid">
@@ -12,7 +15,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="w-100 d-flex flex-column flex-lg-row align-items-center justify-content-center">
-                <form class="d-flex w-50 w-lg-25 mb-3 mb-lg-0" role="search" method="get" action="/Documentation_QuerySafe/search.php">
+                <form class="d-flex w-25 w-lg-25 mb-3 me-5 mb-lg-0" role="search" method="get" action="/Documentation_QuerySafe/search.php">
                     <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search"
                         value="<?= isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '' ?>" />
                 </form>
@@ -33,7 +36,6 @@
         </div>
     </div>
 </nav>
-
 
 <style>
     @media (max-width: 450px) {

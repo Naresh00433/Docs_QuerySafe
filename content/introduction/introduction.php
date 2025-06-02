@@ -1,5 +1,5 @@
 <h2>Welcome</h2>
-<p><strong>Welcome to the official documentation of <a href="https://querysafe.in/" target="_blank" class="text-primary">QuerySafe</a> – a secure and intelligent chatbot platform developed by <a href="https://metricvibes.com//" target="_blank" class="text-primary">Metric Vibes.</a></strong></p>
+<p><strong>Welcome to the official documentation of <a href="https://querysafe.in/" target="_blank" class="text-primary">QuerySafe</a> – a secure and intelligent chatbot platform developed by <a href="https://metricvibes.com/" target="_blank" class="text-primary">Metric Vibes.</a></strong></p>
 <p>This guide provides everything you need to understand, build, customize, and deploy powerful chatbots tailored to your business or application needs.</p>
 <p>Whether you're a developer, product manager, or tech enthusiast, this documentation offers a full-stack overview 
   — from initial setup to advanced customization <br>
