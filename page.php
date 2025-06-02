@@ -212,18 +212,6 @@ require './pre/header.php';
     </div>
 </div>
 
-<!-- Offcanvas Sidebar for Mobile -->
-<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="mobileSidebarLabel">Menu</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body p-0">
-        <?php renderSidebar($sidebar); ?>
-    </div>
-</div>
-
-
 <style>
     /* Professional Sidebar Styles */
 
@@ -260,7 +248,7 @@ require './pre/header.php';
     font-weight: 700;
     color: #8f4be9;
     background: #f7f3fd;
-} */
+    } */
 
     .sidebar .nav-link.active,
     .sidebar .nav-link:hover,
@@ -299,7 +287,7 @@ require './pre/header.php';
             margin: 0 !important;
             padding: 1rem !important;
             padding-top: 0 !important;
-            margin-top: 60px !important; /* Space for header */
+            margin-top: 80px !important; /* Space for header */
         }
 
         .d-flex.justify-content-center.mt-4.me-2 {
