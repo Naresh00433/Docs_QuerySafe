@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../assets/images/Logo/logo-QS.png">
+    <link rel="icon" type="image/png" href="./assets/images/Logo/logo-QS.png">
     <title>QuerySafe Documentation</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
@@ -52,12 +52,12 @@
                             </svg>
                         </span>
                     </form>
-                    <a href="https://querysafe.in/contact/" target="_blank" rel="noopener" class="d-flex align-items-center ms-lg-4 text-decoration-none" style="color: #8f4be9; font-weight: 500;">
+                    <!-- <a href="https://querysafe.in/contact/" target="_blank" rel="noopener" class="d-flex align-items-center ms-lg-4 text-decoration-none" style="color: #8f4be9; font-weight: 500;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#8f4be9" class="bi bi-envelope me-2" viewBox="0 0 16 16">
                             <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.383V5.383zm-.034 6.434-5.396-3.24L8 9.583l-.57-.343-5.396 3.24A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.183zM1 11.383l4.708-2.825L1 5.383v6z" />
                         </svg>
                         Contact Us
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </div>
